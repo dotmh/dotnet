@@ -3,7 +3,7 @@ NO_POSTFIX := ""
 LIB_POSTFIX := "Lib"
 
 # Initialize a new project with a console app, library, and tests
-init-console NAME: (init-project NAME) (init-library NAME) (init-console-app NAME)
+init-console NAME: (init-project NAME) (init-library NAME) (init-console-app NAME) && init-github-actions
     dotnet add {{NAMESPACE}}.{{NAME}} reference {{NAMESPACE}}.{{NAME}}lib
 
 # Initialize a new solution and gitignore
@@ -22,6 +22,11 @@ init-console-app NAME: && (_init-tests NAME)
     mkdir -p ./{{NAMESPACE}}.{{NAME}}
     dotnet new console -n {{NAMESPACE}}.{{NAME}} -o ./{{NAMESPACE}}.{{NAME}}
     dotnet sln add {{NAMESPACE}}.{{NAME}}
+
+# Creates a github actions workflow for dotnet
+init-github-actions:
+    mkdir -p .github/workflows
+    cp templates/dotnet.yml .github/workflows/dotnet.yml
 
 # Initialize tests for a project
 _init-tests NAME POSTFIX=NO_POSTFIX:
