@@ -1,12 +1,11 @@
-NAMESPACE := "DotMH" # The namespace for the project
-LIB_POSTFIX := "Lib" # The postfix for the library project
-
-NO_POSTFIX := "" # A constant to represent no postfix DO NOT EDIT
+NAMESPACE := "DotMH"
+NO_POSTFIX := ""
+LIB_POSTFIX := "Lib"
 
 # Initialize a new project with a console app, library, and tests
 [no-cd]
 init-console NAME: (init-project NAME) (init-library NAME) (init-console-app NAME) && init-github-actions
-    dotnet add {{NAMESPACE}}.{{NAME}} reference {{NAMESPACE}}.{{NAME}}{{LIB_POSTFIX}}
+    dotnet add {{NAMESPACE}}.{{NAME}} reference {{NAMESPACE}}.{{NAME}}lib
 
 # Initialize a new solution and gitignore
 [no-cd]
