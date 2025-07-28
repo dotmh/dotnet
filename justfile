@@ -1,3 +1,5 @@
+set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
+
 NAMESPACE := "DotMH" # The namespace for the project
 LIB_POSTFIX := "Lib" # The postfix for the library project
 
