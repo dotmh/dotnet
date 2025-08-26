@@ -2,6 +2,7 @@ set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
 
 NAMESPACE := "DotMH" # The namespace for the project
 LIB_POSTFIX := "Lib" # The postfix for the library project
+TEST_POSTFIX := "Tests" # The postfix for the test library projects
 
 NO_POSTFIX := "" # A constant to represent no postfix DO NOT EDIT
 
@@ -17,7 +18,7 @@ init-project NAME:
 # Initialize a new library with tests
 init-library NAME: && (_init-tests NAME LIB_POSTFIX)
     mkdir -p ./{{NAMESPACE}}.{{NAME}}{{LIB_POSTFIX}}
-    dotnet new classlib -n {{NAMESPACE}}.{{NAME}}lib -o ./{{NAMESPACE}}.{{NAME}}{{LIB_POSTFIX}}
+    dotnet new classlib -n {{NAMESPACE}}.{{NAME}}{{LIB_POSTFIX}} -o ./{{NAMESPACE}}.{{NAME}}{{LIB_POSTFIX}}
     dotnet sln add {{NAMESPACE}}.{{NAME}}{{LIB_POSTFIX}}
 
 # Initialize a new console app with test
@@ -33,7 +34,7 @@ init-github-actions:
 
 # Initialize tests for a project
 _init-tests NAME POSTFIX=NO_POSTFIX:
-    mkdir -p ./{{NAMESPACE}}.{{NAME}}{{POSTFIX}}Tests
-    dotnet new xunit -n {{NAMESPACE}}.{{NAME}}{{POSTFIX}}Tests -o ./{{NAMESPACE}}.{{NAME}}{{POSTFIX}}Tests
-    dotnet sln add {{NAMESPACE}}.{{NAME}}{{POSTFIX}}Tests
-    dotnet add {{NAMESPACE}}.{{NAME}}{{POSTFIX}}Tests reference {{NAMESPACE}}.{{NAME}}{{POSTFIX}}
+    mkdir -p ./{{NAMESPACE}}.{{NAME}}{{POSTFIX}}{{TEST_POSTFIX}}
+    dotnet new xunit -n {{NAMESPACE}}.{{NAME}}{{POSTFIX}}{{TEST_POSTFIX}} -o ./{{NAMESPACE}}.{{NAME}}{{POSTFIX}}{{TEST_POSTFIX}}
+    dotnet sln add {{NAMESPACE}}.{{NAME}}{{POSTFIX}}{{TEST_POSTFIX}}
+    dotnet add {{NAMESPACE}}.{{NAME}}{{POSTFIX}}{{TEST_POSTFIX}} reference {{NAMESPACE}}.{{NAME}}{{POSTFIX}}
