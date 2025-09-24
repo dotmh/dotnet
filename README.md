@@ -30,7 +30,9 @@ This is a template project for me to build C# projects with while I am learning 
 ## Just Constants
 
 - NAMESPACE : The namespace to use when creating projects (default: DotMH)
-- LIB_POSTFIX : The postfix to append to library names (default: Lib)
+- LIB_POSTFIX : The postfix to append to library project names (default: Lib)
+- TEST_POSTFIX : The postfix to append to Test project names (default: Tests)
+- API_POSTFIX : The postfix to append to API project names (default: Api)
 
 ## Just Commands
 
@@ -72,6 +74,30 @@ Creates a new complete Command Line (Console) app, with the name `{{NAMEPACE}}.{
 - A Console App
 - A Library
 - Tests for the Console App
+- Tests for the Library
+- Link it all together in the solution.
+
+### init-webapi-app
+
+#### Params
+
+- NAME: The name (without) the namespace to give a Web Api (webapi) app
+
+Create a new Web Api (webapi) app, with the name `{{NAMEPACE}}.{{NAME}}`. It will also create a
+test project named `{{NAMEPACE}}.{{NAME}}Test`. The new project will be added to the solution
+
+### init-api
+
+#### Params
+
+- NAME: The name (without) the namespace to give a Web Api (webapi) app
+
+Creates a new complete Command Line (Console) app, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
+
+- A solution
+- A Web Api App
+- A Library
+- Tests for the Web Api App
 - Tests for the Library
 - Link it all together in the solution.
 
