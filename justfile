@@ -33,7 +33,7 @@ init-console-app NAME: && (_init-tests NAME)
     dotnet sln add {{NAMESPACE}}.{{NAME}}
 
 # Initialize a new web api app with tests
-init-webapi-app NAME: && (_init_tests NAME)
+init-webapi-app NAME: && (_init-tests NAME)
     mkdir -p ./{{NAMESPACE}}.{{NAME}}{{API_POSTFIX}}
     dotnet new webapi -n {{NAMESPACE}}.{{NAME}}{{API_POSTFIX}} -o ./{{NAMESPACE}}.{{NAME}}{{API_POSTFIX}} 
     dotnet sln add {{NAMESPACE}}.{{NAME}}{{API_POSTFIX}}
