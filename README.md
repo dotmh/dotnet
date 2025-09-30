@@ -38,6 +38,10 @@ This is a template project for me to build C# projects with while I am learning 
 
 ### init-project
 
+```bash
+just init-project MyProject
+```
+
 #### Params
 
 - NAME : The name (without) the namespace to give your project
@@ -46,6 +50,12 @@ Creates a new project using NAME, this is done by adding a `gitignore` and a `so
 
 ### init-library
 
+#### Example
+
+```bash
+just init-library MyLibrary
+```
+
 #### Params
 
 - NAME : The name (without) the namespace to give your library, it will be given the post fix defined in LIB
@@ -53,7 +63,34 @@ Creates a new project using NAME, this is done by adding a `gitignore` and a `so
 Creates a new C# class library with the name `{{NAMEPACE}}.{{NAME}}{{LIB_POSTFIX}}`. It will also create a
 test project named `{{NAMEPACE}}.{{NAME}}{{LIB_POSTFIX}}Tests`. The new project will be added to the solution
 
+### init-libray-project
+
+#### Example
+
+```bash
+just init-library-app MyLibrary
+```
+
+#### Params
+
+- NAME: The name (without) the namespace to give a library solution
+
+Creates a new complete Library project, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
+
+- A solution
+- A Console App
+- A Library
+- Tests for the Console App
+- Tests for the Library
+- Link it all together in the solution.
+
 ### init-console-app
+
+#### Example
+
+```bash
+just init-console-app MyApp
+```
 
 #### Params
 
@@ -62,13 +99,19 @@ test project named `{{NAMEPACE}}.{{NAME}}{{LIB_POSTFIX}}Tests`. The new project 
 Create a new Command Line (Console) app, with the name `{{NAMEPACE}}.{{NAME}}`. It will also create a
 test project named `{{NAMEPACE}}.{{NAME}}Test`. The new project will be added to the solution
 
-### init-console
+### init-console-project
+
+#### Example
+
+```bash
+just init-console-project MyApp
+```
 
 #### Params
 
 - NAME: The name (without) the namespace to give a command line (console) solution
 
-Creates a new complete Command Line (Console) app, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
+Creates a new complete Command Line (Console) project, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
 
 - A solution
 - A Console App
@@ -79,6 +122,12 @@ Creates a new complete Command Line (Console) app, with the name `{{NAMEPACE}}.{
 
 ### init-webapi-app
 
+#### Example
+
+```bash
+just init-webapi-app MyApi
+```
+
 #### Params
 
 - NAME: The name (without) the namespace to give a Web Api (webapi) app
@@ -86,13 +135,19 @@ Creates a new complete Command Line (Console) app, with the name `{{NAMEPACE}}.{
 Create a new Web Api (webapi) app, with the name `{{NAMEPACE}}.{{NAME}}`. It will also create a
 test project named `{{NAMEPACE}}.{{NAME}}Test`. The new project will be added to the solution
 
-### init-api
+### init-webapi-project
+
+#### Examples
+
+```bash
+just init-webapi-project MyAPI
+```
 
 #### Params
 
-- NAME: The name (without) the namespace to give a Web Api (webapi) app
+- NAME: The name (without) the namespace to give a Web Api (webapi) project
 
-Creates a new complete Command Line (Console) app, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
+Creates a new complete Web Api project, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
 
 - A solution
 - A Web Api App

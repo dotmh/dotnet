@@ -8,12 +8,14 @@ API_POSTFIX := "Api" # The postfix for Web Api projects
 NO_POSTFIX := "" # A constant to represent no postfix DO NOT EDIT
 
 # Initialize a new project with a console app, library, and tests
-init-console NAME: (init-project NAME) (init-library NAME) (init-console-app NAME) && init-github-actions
+init-console-project NAME: (init-project NAME) (init-library NAME) (init-console-app NAME) && init-github-actions
     dotnet add {{NAMESPACE}}.{{NAME}} reference {{NAMESPACE}}.{{NAME}}{{LIB_POSTFIX}}
 
 # Initialize a new project wih a Web Api, library and tests
-init-api NAME: (init-project NAME) (init-library NAME) (init-webapi-app NAME) && init-github-actions
+init-webapi-project NAME: (init-project NAME) (init-library NAME) (init-webapi-app NAME) && init-github-actions
     dotnet add {{NAMESPACE}}.{{NAME}}.{{API_POSTFIX}} reference {{NAMESPACE}}.{{NAME}}.{{LIB_POSTFIX}}
+
+init-library-project NAME: (init-project NAME) (init-library NAME) && init-github-actions
 
 # Initialize a new solution and gitignore
 init-project NAME:
