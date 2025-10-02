@@ -4,7 +4,6 @@
 
 ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-%23FE5196?style=for-the-badge&logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
@@ -63,12 +62,12 @@ just init-library MyLibrary
 Creates a new C# class library with the name `{{NAMEPACE}}.{{NAME}}{{LIB_POSTFIX}}`. It will also create a
 test project named `{{NAMEPACE}}.{{NAME}}{{LIB_POSTFIX}}Tests`. The new project will be added to the solution
 
-### init-libray-project
+### init-libray-sln
 
 #### Example
 
 ```bash
-just init-library-app MyLibrary
+just init-library-sln MyLibrary
 ```
 
 #### Params
@@ -99,12 +98,12 @@ just init-console-app MyApp
 Create a new Command Line (Console) app, with the name `{{NAMEPACE}}.{{NAME}}`. It will also create a
 test project named `{{NAMEPACE}}.{{NAME}}Test`. The new project will be added to the solution
 
-### init-console-project
+### init-console-sln
 
 #### Example
 
 ```bash
-just init-console-project MyApp
+just init-console-sln MyApp
 ```
 
 #### Params
@@ -135,12 +134,12 @@ just init-webapi-app MyApi
 Create a new Web Api (webapi) app, with the name `{{NAMEPACE}}.{{NAME}}`. It will also create a
 test project named `{{NAMEPACE}}.{{NAME}}Test`. The new project will be added to the solution
 
-### init-webapi-project
+### init-webapi-sln
 
 #### Examples
 
 ```bash
-just init-webapi-project MyAPI
+just init-webapi-sln MyAPI
 ```
 
 #### Params
