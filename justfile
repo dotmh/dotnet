@@ -13,7 +13,7 @@ init-console-sln NAME: (init-project NAME) (init-library NAME) (init-console-app
 
 # Initialize a new solution wih a Web Api, library and tests
 init-webapi-sln NAME: (init-project NAME) (init-library NAME) (init-webapi-app NAME) && init-github-actions
-    dotnet add {{NAMESPACE}}.{{NAME}}.{{API_POSTFIX}} reference {{NAMESPACE}}.{{NAME}}.{{LIB_POSTFIX}}
+    dotnet add {{NAMESPACE}}.{{NAME}}{{API_POSTFIX}} reference {{NAMESPACE}}.{{NAME}}{{LIB_POSTFIX}}
 
 # Initialize a new solution wih a library and tests
 init-library-sln NAME: (init-project NAME) (init-library NAME) && init-github-actions
@@ -36,7 +36,7 @@ init-console-app NAME: && (_init-tests NAME)
     dotnet sln add {{NAMESPACE}}.{{NAME}}
 
 # Initialize a new web api app with tests
-init-webapi-app NAME: && (_init-tests NAME)
+init-webapi-app NAME: && (_init-tests NAME API_POSTFIX)
     mkdir -p ./{{NAMESPACE}}.{{NAME}}{{API_POSTFIX}}
     dotnet new webapi -n {{NAMESPACE}}.{{NAME}}{{API_POSTFIX}} -o ./{{NAMESPACE}}.{{NAME}}{{API_POSTFIX}} 
     dotnet sln add {{NAMESPACE}}.{{NAME}}{{API_POSTFIX}}
