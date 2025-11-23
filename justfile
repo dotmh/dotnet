@@ -7,6 +7,10 @@ API_POSTFIX := "Api" # The postfix for Web Api projects
 
 NO_POSTFIX := "" # A constant to represent no postfix DO NOT EDIT
 
+# Show the task list when a users runs just help
+help:
+    just -l
+
 # Initialize a new solution with a console app, library, and tests
 init-console-sln NAME: (init-project NAME) (init-library NAME) (init-console-app NAME) && init-github-actions
     dotnet add {{NAMESPACE}}.{{NAME}} reference {{NAMESPACE}}.{{NAME}}{{LIB_POSTFIX}}
