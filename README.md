@@ -79,9 +79,7 @@ just init-library-sln MyLibrary
 Creates a new complete Library project, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
 
 - A solution
-- A Console App
 - A Library
-- Tests for the Console App
 - Tests for the Library
 - Link it all together in the solution.
 
