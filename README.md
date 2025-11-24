@@ -35,6 +35,8 @@ This is a template project for me to build C# projects with while I am learning 
 
 ## Just Commands
 
+To see a list of the available Just commands run `just -l` or `just help`
+
 ### init-project
 
 ```bash
