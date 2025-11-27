@@ -56,6 +56,7 @@ init-webapi-app NAME: && (_init-tests NAME API_POSTFIX)
 # Initialize a new Gui app (based on Avalonia[https://avaloniaui.net])
 [group('New Projects')]
 init-gui-app NAME: && (_init-tests NAME)
+    dotnet new list avalonia.mvvm || dotnet new install Avalonia.Templates
     mkdir -p ./{{NAMESPACE}}.{{NAME}}
     dotnet new avalonia.mvvm -n {{NAMESPACE}}.{{NAME}} -o ./{{NAMESPACE}}.{{NAME}}
     dotnet sln add {{NAMESPACE}}.{{NAME}}
