@@ -37,19 +37,22 @@ This is a template project for me to build C# projects with while I am learning 
 
 To see a list of the available Just commands run `just -l` or `just help`
 
-### init-project
+### init-sln
+
+Creates a new solution using NAME, this is done by adding a `gitignore` and a `solution`
 
 ```bash
-just init-project MyProject
+just init-sln MyProject
 ```
 
 #### Params
 
-- NAME : The name (without) the namespace to give your project
-
-Creates a new project using NAME, this is done by adding a `gitignore` and a `solution`
+- NAME : The name (without) the namespace to give your solution
 
 ### init-library
+
+Creates a new C# class library with the name `{{NAMEPACE}}.{{NAME}}{{LIB_POSTFIX}}`. It will also create a
+test project named `{{NAMEPACE}}.{{NAME}}{{LIB_POSTFIX}}Tests`. The new project will be added to the solution
 
 #### Example
 
@@ -61,10 +64,14 @@ just init-library MyLibrary
 
 - NAME : The name (without) the namespace to give your library, it will be given the post fix defined in LIB
 
-Creates a new C# class library with the name `{{NAMEPACE}}.{{NAME}}{{LIB_POSTFIX}}`. It will also create a
-test project named `{{NAMEPACE}}.{{NAME}}{{LIB_POSTFIX}}Tests`. The new project will be added to the solution
-
 ### init-libray-sln
+
+Creates a new complete Library Solution, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
+
+- A solution
+- A Library
+- Tests for the Library
+- Link it all together in the solution.
 
 #### Example
 
@@ -76,14 +83,10 @@ just init-library-sln MyLibrary
 
 - NAME: The name (without) the namespace to give a library solution
 
-Creates a new complete Library project, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
-
-- A solution
-- A Library
-- Tests for the Library
-- Link it all together in the solution.
-
 ### init-console-app
+
+Create a new Command Line (Console) app, with the name `{{NAMEPACE}}.{{NAME}}`. It will also create a
+test project named `{{NAMEPACE}}.{{NAME}}Test`. The new project will be added to the solution
 
 #### Example
 
@@ -95,10 +98,16 @@ just init-console-app MyApp
 
 - NAME: The name (without) the namespace to give a command line (console) app
 
-Create a new Command Line (Console) app, with the name `{{NAMEPACE}}.{{NAME}}`. It will also create a
-test project named `{{NAMEPACE}}.{{NAME}}Test`. The new project will be added to the solution
-
 ### init-console-sln
+
+Creates a new complete Command Line (Console) Solution, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
+
+- A solution
+- A Console App
+- A Library
+- Tests for the Console App
+- Tests for the Library
+- Link it all together in the solution.
 
 #### Example
 
@@ -110,16 +119,10 @@ just init-console-sln MyApp
 
 - NAME: The name (without) the namespace to give a command line (console) solution
 
-Creates a new complete Command Line (Console) project, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
-
-- A solution
-- A Console App
-- A Library
-- Tests for the Console App
-- Tests for the Library
-- Link it all together in the solution.
-
 ### init-webapi-app
+
+Create a new Web Api (webapi) app, with the name `{{NAMEPACE}}.{{NAME}}`. It will also create a
+test project named `{{NAMEPACE}}.{{NAME}}Test`. The new project will be added to the solution
 
 #### Example
 
@@ -131,22 +134,9 @@ just init-webapi-app MyApi
 
 - NAME: The name (without) the namespace to give a Web Api (webapi) app
 
-Create a new Web Api (webapi) app, with the name `{{NAMEPACE}}.{{NAME}}`. It will also create a
-test project named `{{NAMEPACE}}.{{NAME}}Test`. The new project will be added to the solution
-
 ### init-webapi-sln
 
-#### Examples
-
-```bash
-just init-webapi-sln MyAPI
-```
-
-#### Params
-
-- NAME: The name (without) the namespace to give a Web Api (webapi) project
-
-Creates a new complete Web Api project, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
+Creates a new complete Web Api solution, with the name `{{NAMEPACE}}.{{NAME}}`. It will generate
 
 - A solution
 - A Web Api App
@@ -154,6 +144,55 @@ Creates a new complete Web Api project, with the name `{{NAMEPACE}}.{{NAME}}`. I
 - Tests for the Web Api App
 - Tests for the Library
 - Link it all together in the solution.
+
+#### Example
+
+```bash
+just init-webapi-sln MyAPI
+```
+
+#### Params
+
+- NAME: The name (without) the namespace to give a Web Api (webapi) solution
+
+### init-gui-app
+
+Creates a GUI Application based on Avalonia <https://avaloniaui.net/> using the MVVM template
+
+Note if the template isn't already installed, it will install it first.
+
+#### Example
+
+```bash
+just init-gui-app MyGuiApp
+```
+
+#### Params
+
+- NAME: The name (without) the namespace to give a Gui App (avalonia.mvvm) project
+
+### init-gui-sln
+
+Creates a GUI Application Solution based on Avalonia <https://avaloniaui.net/> using the MVVM template
+
+Note if the template isn't already installed, it will install it first.
+
+- A solution
+- A Gui App
+- A Library
+- Tests for the Gui App
+- Tests for the Library
+- Link it all together in the solution.
+
+#### Example
+
+```bash
+just init-gui-sln MyGuiApp
+```
+
+#### Params
+
+- NAME: The name (without) the namespace to give a Gui App (avalonia.mvvm) solution
 
 ## License
 
