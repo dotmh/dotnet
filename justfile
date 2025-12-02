@@ -1,11 +1,7 @@
 set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
+import "./constants.just"
 
-NAMESPACE := "DotMH" # The namespace for the project
-LIB_POSTFIX := "Lib" # The postfix for the library project
-TEST_POSTFIX := "Tests" # The postfix for the test library projects
-API_POSTFIX := "Api" # The postfix for Web Api projects
-
-NO_POSTFIX := "" # A constant to represent no postfix DO NOT EDIT
+NO_POSTFIX      := "" # A constant to represent no postfix DO NOT EDIT
 
 # Initialize a new solution with a console app, library, and tests
 [group('New Solutions')]
@@ -71,6 +67,11 @@ help:
 init-github-actions:
     mkdir -p .github/workflows
     cp templates/dotnet.yml .github/workflows/dotnet.yml
+
+[group('Helpers')]
+update:
+    cp ./justfile ./justfile.bak
+    curl -o ./justfile {{UPDATE_URL}}
 
 # Initialize tests for a project
 _init-tests NAME POSTFIX=NO_POSTFIX:
