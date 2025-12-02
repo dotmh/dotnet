@@ -32,10 +32,15 @@ This is a template project for me to build C# projects with while I am learning 
 - LIB_POSTFIX : The postfix to append to library project names (default: Lib)
 - TEST_POSTFIX : The postfix to append to Test project names (default: Tests)
 - API_POSTFIX : The postfix to append to API project names (default: Api)
+- UPDATE_URL : The main just task file to update from (default: this repo's ./justfile)
 
 ## Just Commands
 
 To see a list of the available Just commands run `just -l` or `just help`
+
+### Updating
+
+If you want to get the latest justfile in an exciting project you can run `just update` it will back up your current justfile as `justfile.bak` and then download and install the lastest one from `UPDATE_URL` which is defaulted to this repo
 
 ### init-sln
 
