@@ -37,9 +37,9 @@ init-library NAME: && (_init-tests NAME LIB_POSTFIX)
 
 # Initialize a new console app with tests
 [group('New Projects')]
-init-console-app NAME: && (_init-tests NAME)
+init-console-app NAME: && (_init-tests NAME CLI_POSTFIX)
     mkdir -p ./{{NAMESPACE}}.{{NAME}}{{CLI_POSTFIX}}
-    dotnet new console -n {{NAMESPACE}}.{{NAME}}{{CLI_POSTFIX}} -o ./{{NAMESPACE}}.{{NAME}}
+    dotnet new console -n {{NAMESPACE}}.{{NAME}}{{CLI_POSTFIX}} -o ./{{NAMESPACE}}.{{NAME}}{{CLI_POSTFIX}}
     dotnet sln add {{NAMESPACE}}.{{NAME}}{{CLI_POSTFIX}}
 
 # Initialize a new web api app with tests
@@ -68,6 +68,7 @@ init-github-actions:
     mkdir -p .github/workflows
     cp templates/dotnet.yml .github/workflows/dotnet.yml
 
+# Update this just file from the master
 [group('Helpers')]
 update:
     cp ./justfile ./justfile.bak
