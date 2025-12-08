@@ -6,7 +6,7 @@ NO_POSTFIX      := "" # A constant to represent no postfix DO NOT EDIT
 # Initialize a new solution with a console app, library, and tests
 [group('New Solutions')]
 init-console-sln NAME: (init-sln NAME) (init-library NAME) (init-console-app NAME) && init-github-actions
-    dotnet add {{NAMESPACE}}.{{NAME}} reference {{NAMESPACE}}.{{NAME}}{{LIB_POSTFIX}}
+    dotnet add {{NAMESPACE}}.{{NAME}}{{CLI_POSTFIX}} reference {{NAMESPACE}}.{{NAME}}{{LIB_POSTFIX}}
 
 # Initialize a new solution wih a Web Api, library and tests
 [group('New Solutions')]
@@ -38,9 +38,9 @@ init-library NAME: && (_init-tests NAME LIB_POSTFIX)
 # Initialize a new console app with tests
 [group('New Projects')]
 init-console-app NAME: && (_init-tests NAME)
-    mkdir -p ./{{NAMESPACE}}.{{NAME}}
-    dotnet new console -n {{NAMESPACE}}.{{NAME}} -o ./{{NAMESPACE}}.{{NAME}}
-    dotnet sln add {{NAMESPACE}}.{{NAME}}
+    mkdir -p ./{{NAMESPACE}}.{{NAME}}{{CLI_POSTFIX}}
+    dotnet new console -n {{NAMESPACE}}.{{NAME}}{{CLI_POSTFIX}} -o ./{{NAMESPACE}}.{{NAME}}
+    dotnet sln add {{NAMESPACE}}.{{NAME}}{{CLI_POSTFIX}}
 
 # Initialize a new web api app with tests
 [group('New Projects')]
