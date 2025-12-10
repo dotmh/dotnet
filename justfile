@@ -26,6 +26,8 @@ init-gui-sln NAME: (init-sln NAME) (init-library NAME) && init-github-actions
 [group('New Solutions')]
 init-sln NAME:
     dotnet new gitignore
+    dotnet new editorconfig
+    \cat templates/gitignore >> .gitignore
     dotnet new sln -n {{NAMESPACE}}.{{NAME}}
 
 # Initialize a new library with tests
