@@ -1,4 +1,4 @@
-![DotMH](https://github.com/dotmh/dotmh/raw/master/dotnet-logo.png)
+![DotMH](https://github.com/dotmh/dotmh/raw/main/dotnet-logo.png)
 
 # DotMH DotNet C# Template
 
