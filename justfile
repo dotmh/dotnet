@@ -19,7 +19,7 @@ init-library-sln NAME: (init-sln NAME) (init-library NAME) && init-github-action
 
 # Initialize a new solution with a GUI app based on Avalonia and tests (based on Avalonia[https://avaloniaui.net])
 [group('New Solutions')]
-init-gui-sln NAME: (init-sln NAME) (init-library NAME) && init-github-actions
+init-gui-sln NAME: (init-sln NAME) (init-library NAME) (init-gui-app NAME) && init-github-actions
     dotnet add {{NAMESPACE}}.{{NAME}} reference {{NAMESPACE}}.{{NAME}}{{LIB_POSTFIX}}
 
 # Initialize a new solution and gitignore
